@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
       title: "외대종강시계",
       category: "Web App",
       description: "약 100명의 학우들이 사용하는 크롬익스텐션 서비스입니다.",
-      image: ["/hufsclock/seoul-day", "/hufsclock/seoul-night.png", "hufsclock/widget.png"],
+      image: ["/hufsclock/seoul-main.png", "/hufsclock/seoul-night.png", "hufsclock/widget.png"],
       techStack: ["React.js", "FastApi", "React Query", "Zustand", "vercel", "Vite", "SCSS", "Formspree", "Axios"],
       features: [
          "파이썬의 FastAPI를 통해 데이터를 처리",
