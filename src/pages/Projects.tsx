@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
       category: "Web App",
       description: "약 100명의 학우들이 사용하는 크롬익스텐션 서비스입니다.",
       image: ["/src/assets/hufsclock/설캠 낮.png", "/src/assets/hufsclock/설캠 밤.png", "/src/assets/hufsclock/위젯 창.png"],
-      techStack: ["React.js", "FastApi", "React Query", "Zustand", "vercel"],
+      techStack: ["React.js", "FastApi", "React Query", "Zustand", "vercel", "Vite", "SCSS", "Formspree", "Axios"],
       features: [
          "파이썬의 FastAPI를 통해 데이터를 처리",
          "Swiper.js를 활용한 웹앱 스타일 UI 구현",
@@ -123,7 +123,7 @@ const Projects: React.FC = () => {
              Projects
           </h1>
           <p className="text-text-secondary text-lg font-normal leading-relaxed max-w-2xl">
-             A curated selection of my work in software development, showcasing full-stack capabilities and innovative solutions.
+            끊임없는 고민과 기술적 시도가 녹아있는 저의 성장 기록입니다.
           </p>
        </div>
 
@@ -180,7 +180,7 @@ const Projects: React.FC = () => {
        </div>
 
        {/* Pagination */}
-       <div className="flex items-center justify-center p-8 mt-6">
+       {/* <div className="flex items-center justify-center p-8 mt-6">
           <a className="flex size-10 items-center justify-center hover:text-primary transition-colors" href="#">
              <div className="text-text-secondary">
                 <span className="material-symbols-outlined">chevron_left</span>
@@ -194,7 +194,7 @@ const Projects: React.FC = () => {
                 <span className="material-symbols-outlined">chevron_right</span>
              </div>
           </a>
-       </div>
+       </div> */}
 
        <ProjectModal isOpen={isModalOpen} onClose={closeModal} project={selectedProject || undefined} />
     </div>

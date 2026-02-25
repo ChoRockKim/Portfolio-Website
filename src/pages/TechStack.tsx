@@ -3,6 +3,7 @@ import TechStacks from '../components/TechStacks/TechStacks';
 import type { TechStackTypeList } from '../types/TechStack/TechStack';
 import BackStacks from '../components/TechStacks/BackStacks';
 import { data } from 'react-router-dom';
+import ScrollToNext from '../utils/ScrollToNext.jsx'
 
 const TechStack: React.FC = () => {
 
@@ -44,8 +45,16 @@ const TechStack: React.FC = () => {
          explain : "RESTful API 설계 표준을 준수하며, Spring Boot로 데이터의 무결성을 보장하는 백엔드 시스템을 만듭니다.",
          path : "M21.8537 1.4158a10.4504 10.4504 0 0 1-1.284 2.2471A11.9666 11.9666 0 1 0 3.8518 20.7757l.4445.3951a11.9543 11.9543 0 0 0 19.6316-8.2971c.3457-3.0126-.568-6.8649-2.0743-11.458zM5.5805 20.8745a1.0174 1.0174 0 1 1-.1482-1.4323 1.0396 1.0396 0 0 1 .1482 1.4323zm16.1991-3.5806c-2.9385 3.9263-9.2601 2.5928-13.2852 2.7904 0 0-.7161.0494-1.4323.1481 0 0 .2717-.1234.6174-.2469 2.8398-.9877 4.1732-1.1853 5.9018-2.0743 3.2349-1.6545 6.4698-5.2844 7.1118-9.0379-1.2347 3.6053-4.9881 6.7167-8.3959 7.9761-2.3459.8643-6.5685 1.7039-6.5685 1.7039l-.1729-.0988c-2.8645-1.4076-2.9632-7.6304 2.2718-9.6306 2.2966-.889 4.4696-.395 6.9637-.9877 2.6422-.6174 5.7043-2.5929 6.939-5.1857 1.3828 4.1732 3.062 10.643.0493 14.6434z",
          color : "#6DB33F"
+      },
+      {
+         framework: "Supabase",
+         explain : "PostgreSQL의 강력한 기능을 Supabase를 통해 클라우드 환경에서 유연하게 핸들링한 경험이 있습니다.",
+         path : "M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z",
+         color : "#3ECF8E"
       }
    ]
+
+
 
    
    
@@ -96,51 +105,11 @@ const TechStack: React.FC = () => {
              </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-             {/* Card: Spring Boot */}
                {backTechStackList.map((datas, idx) => {
                   return (
                      <BackStacks datas={datas} key={idx}/>
                   )
                })}
-             {/* Card: Node.js */}
-             <div className="group relative flex flex-col gap-4 rounded-2xl bg-glass border border-glass-border p-6 backdrop-blur-sm transition-all duration-300 hover:bg-glass/20 hover:border-primary/50 hover:shadow-glow hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div className="relative z-10 flex items-start justify-between">
-                   <div className="p-3 rounded-lg bg-slate-800 text-[#68A063]">
-                      <span className="material-symbols-outlined text-3xl">javascript</span>
-                   </div>
-                </div>
-                <div className="relative z-10">
-                   <h3 className="text-xl font-bold text-white mb-1">Node.js</h3>
-                   <p className="text-slate-400 text-sm leading-relaxed">Efficient JavaScript runtime for scalable network applications.</p>
-                </div>
-             </div>
-             {/* Card: MySQL */}
-             <div className="group relative flex flex-col gap-4 rounded-2xl bg-glass border border-glass-border p-6 backdrop-blur-sm transition-all duration-300 hover:bg-glass/20 hover:border-primary/50 hover:shadow-glow hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div className="relative z-10 flex items-start justify-between">
-                   <div className="p-3 rounded-lg bg-slate-800 text-[#4479A1]">
-                      <span className="material-symbols-outlined text-3xl">database</span>
-                   </div>
-                </div>
-                <div className="relative z-10">
-                   <h3 className="text-xl font-bold text-white mb-1">MySQL</h3>
-                   <p className="text-slate-400 text-sm leading-relaxed">Reliable relational database management system.</p>
-                </div>
-             </div>
-             {/* Card: Redis */}
-             <div className="group relative flex flex-col gap-4 rounded-2xl bg-glass border border-glass-border p-6 backdrop-blur-sm transition-all duration-300 hover:bg-glass/20 hover:border-primary/50 hover:shadow-glow hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div className="relative z-10 flex items-start justify-between">
-                   <div className="p-3 rounded-lg bg-slate-800 text-[#DC382D]">
-                      <span className="material-symbols-outlined text-3xl">memory</span>
-                   </div>
-                </div>
-                <div className="relative z-10">
-                   <h3 className="text-xl font-bold text-white mb-1">Redis</h3>
-                   <p className="text-slate-400 text-sm leading-relaxed">In-memory data structure store for caching and real-time analytics.</p>
-                </div>
-             </div>
           </div>
        </section>
 
@@ -197,6 +166,7 @@ const TechStack: React.FC = () => {
              </div>
           </div>
        </section>
+       <ScrollToNext nextPath="/projects" nextProjectName="Projects"/>
     </div>
   );
 };

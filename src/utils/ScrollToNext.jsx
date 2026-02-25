@@ -70,7 +70,7 @@ const handleWheel = useCallback((e) => {
 
   return (
     <AnimatePresence>
-      {isAtBottom && (
+      {isAtBottom && pullAmount > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
