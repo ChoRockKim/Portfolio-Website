@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import WhatDoIDo from '../components/WhatDoIDo/WhatDoIDo';
 import type { WhatDoIDoTypeList } from '../types/Home/WhatDoIDo';
 import ScrollToNext from '../utils/ScrollToNext.jsx'
+import TypingText from '../components/Common/TypingText.jsx'
 
 const Home: React.FC = () => {
 
@@ -33,9 +34,10 @@ const Home: React.FC = () => {
              <div className="flex flex-col gap-6 lg:pl-10 justify-center">
                 <div className="flex flex-col gap-3 text-left">
                    <span className="text-primary font-bold tracking-wider uppercase text-sm">Developer Portfolio</span>
-                   <h1 className="text-white text-4xl font-black lg:leading-tight tracking-[-0.033em] lg:text-5xl">
+                   {/* <h1 className="text-white text-4xl font-black lg:leading-tight tracking-[-0.033em] lg:text-5xl">
                       안녕하세요,<br/>프론트엔드 개발자 <br/> <span className="text-green-400">김태헌</span>입니다
-                   </h1>
+                   </h1> */}
+                   <TypingText text={"안녕하세요,\n프론트엔드 개발자 \n김태헌 입니다."} />
                    <p className="text-white/80 text-lg font-normal leading-relaxed mt-2">
                       화면 너머의 데이터 흐름까지 이해하는 프론트엔드 개발자입니다. React 생태계를 활용한 인터페이스 구현은 물론, 백엔드 메커니즘에 대한 깊은 이해를 바탕으로 최적화된 API 구조를 함께 고민하고 설계합니다.
                    </p>

@@ -1,8 +1,7 @@
 import type { TechStackType } from "../../types/TechStack/TechStack"
-import { FaReact } from "react-icons/fa";
-import TypingText from '../Common/TypingText.jsx'
 
-export default function TechStacks({ datas } : {datas : TechStackType}) {
+
+export default function ToolStacks({ datas } : {datas : TechStackType}) {
     return (
         <>
             <div className="group relative flex flex-col gap-4 rounded-2xl bg-glass border border-glass-border p-6 backdrop-blur-sm transition-all duration-300 hover:bg-glass/20 hover:border-primary/50 hover:shadow-glow hover:-translate-y-1">

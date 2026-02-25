@@ -2,8 +2,10 @@ import React from 'react';
 import TechStacks from '../components/TechStacks/TechStacks';
 import type { TechStackTypeList } from '../types/TechStack/TechStack';
 import BackStacks from '../components/TechStacks/BackStacks';
-import { data } from 'react-router-dom';
+import ToolStacks from '../components/TechStacks/ToolStacks.js';
 import ScrollToNext from '../utils/ScrollToNext.jsx'
+import TypingText from '../components/Common/TypingText.jsx'
+
 
 const TechStack: React.FC = () => {
 
@@ -51,10 +53,29 @@ const TechStack: React.FC = () => {
          explain : "PostgreSQL의 강력한 기능을 Supabase를 통해 클라우드 환경에서 유연하게 핸들링한 경험이 있습니다.",
          path : "M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z",
          color : "#3ECF8E"
+      },
+      {
+         framework : "MongoDB",
+         explain : "비정형 데이터 처리를 위한 NoSQL 데이터베이스 활용 경험을 보유하고 있습니다.",
+         path : "M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z",
+         color : "#00ED64"
       }
    ]
 
-
+   const toolsStackList : TechStackTypeList = [
+      {
+         framework : "Git & Github",
+         explain : "동료 개발자와의 원활한 소통을 위해 가독성 있는 커밋 컨벤션을 준수하며, 명확한 브랜치 전략을 통해 체계적인 코드 관리를 수행합니다.",
+         path : "M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187",
+         color : "#F05032"
+      },
+      {  
+         framework : "Vercel",
+         explain : "Git과 연동된 Vercel의 CI/CD 파이프라인을 구축하여 코드 변경 사항을 실시간으로 자동 배포하고, 개발 및 운영의 효율성을 극대화했습니다.",
+         path : "m12 1.608 12 20.784H0Z",
+         color : "white"
+      }
+   ]
 
    
    
@@ -86,9 +107,8 @@ const TechStack: React.FC = () => {
              </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-             {/* Card: React */}
                {frontTechStackList.map((datas, idx) => {
-                  return (<TechStacks datas={datas}/>)
+                  return (<TechStacks datas={datas} key={idx}/>)
                })}
           </div>
        </section>
@@ -126,44 +146,11 @@ const TechStack: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
              {/* Card: AWS */}
-             <div className="group relative flex flex-col gap-4 rounded-2xl bg-glass border border-glass-border p-6 backdrop-blur-sm transition-all duration-300 hover:bg-glass/20 hover:border-primary/50 hover:shadow-glow hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div className="relative z-10 flex items-start justify-between">
-                   <div className="p-3 rounded-lg bg-slate-800 text-[#FF9900]">
-                      <span className="material-symbols-outlined text-3xl">cloud</span>
-                   </div>
-                </div>
-                <div className="relative z-10">
-                   <h3 className="text-xl font-bold text-white mb-1">AWS</h3>
-                   <p className="text-slate-400 text-sm leading-relaxed">Cloud computing services for scalable infrastructure.</p>
-                </div>
-             </div>
-             {/* Card: Docker */}
-             <div className="group relative flex flex-col gap-4 rounded-2xl bg-glass border border-glass-border p-6 backdrop-blur-sm transition-all duration-300 hover:bg-glass/20 hover:border-primary/50 hover:shadow-glow hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div className="relative z-10 flex items-start justify-between">
-                   <div className="p-3 rounded-lg bg-slate-800 text-[#2496ED]">
-                      <span className="material-symbols-outlined text-3xl">view_in_ar</span>
-                   </div>
-                </div>
-                <div className="relative z-10">
-                   <h3 className="text-xl font-bold text-white mb-1">Docker</h3>
-                   <p className="text-slate-400 text-sm leading-relaxed">Containerization platform for consistent development environments.</p>
-                </div>
-             </div>
-             {/* Card: Git */}
-             <div className="group relative flex flex-col gap-4 rounded-2xl bg-glass border border-glass-border p-6 backdrop-blur-sm transition-all duration-300 hover:bg-glass/20 hover:border-primary/50 hover:shadow-glow hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div className="relative z-10 flex items-start justify-between">
-                   <div className="p-3 rounded-lg bg-slate-800 text-[#F05032]">
-                      <span className="material-symbols-outlined text-3xl">call_merge</span>
-                   </div>
-                </div>
-                <div className="relative z-10">
-                   <h3 className="text-xl font-bold text-white mb-1">Git & GitHub</h3>
-                   <p className="text-slate-400 text-sm leading-relaxed">Version control system for tracking changes and collaboration.</p>
-                </div>
-             </div>
+
+               {toolsStackList.map((datas, idx) => {
+                  return (<ToolStacks datas={datas} key={idx}/>)
+               })}
+             
           </div>
        </section>
        <ScrollToNext nextPath="/projects" nextProjectName="Projects"/>
