@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-const TypingText = ({ text }) => {
+const TypingText = ({ text } : { text : string}) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -36,7 +36,7 @@ const TypingText = ({ text }) => {
           transition={{ 
             duration: 0.6, 
             repeat: Infinity, 
-            ease: "steps(2)" 
+            ease: "steps(2)"
           }}
           className="inline-block w-[4px] h-[0.9em] bg-primary ml-1 translate-y-[10%]"
         />

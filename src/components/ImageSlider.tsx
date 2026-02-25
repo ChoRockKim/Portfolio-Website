@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const ImageSlider = ({ images }) => {
+const ImageSlider = ({ images } : { images : string[] }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from 'react'; // 1. u
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const ScrollToNext = ({ nextPath, nextProjectName }) => {
+const ScrollToNext = ({ nextPath, nextProjectName } : { nextPath : string, nextProjectName : string}) => {
   const navigate = useNavigate();
   const [pullAmount, setPullAmount] = useState(0);
   const [isAtBottom, setIsAtBottom] = useState(false);

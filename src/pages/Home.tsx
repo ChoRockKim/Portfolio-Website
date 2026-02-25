@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import WhatDoIDo from '../components/WhatDoIDo/WhatDoIDo';
 import type { WhatDoIDoTypeList } from '../types/Home/WhatDoIDo';
-import ScrollToNext from '../utils/ScrollToNext.jsx'
-import TypingText from '../components/Common/TypingText.jsx'
+import ScrollToNext from '../utils/ScrollToNext.js'
+import TypingText from '../components/Common/TypingText.js'
 
 const Home: React.FC = () => {
 

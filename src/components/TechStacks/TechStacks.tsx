@@ -1,6 +1,4 @@
 import type { TechStackType } from "../../types/TechStack/TechStack"
-import { FaReact } from "react-icons/fa";
-import TypingText from '../Common/TypingText.jsx'
 
 export default function TechStacks({ datas } : {datas : TechStackType}) {
     return (

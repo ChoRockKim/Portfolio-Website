@@ -3,8 +3,8 @@ import TechStacks from '../components/TechStacks/TechStacks';
 import type { TechStackTypeList } from '../types/TechStack/TechStack';
 import BackStacks from '../components/TechStacks/BackStacks';
 import ToolStacks from '../components/TechStacks/ToolStacks.js';
-import ScrollToNext from '../utils/ScrollToNext.jsx'
-import TypingText from '../components/Common/TypingText.jsx'
+import ScrollToNext from '../utils/ScrollToNext.js'
+import TypingText from '../components/Common/TypingText.js'
 
 
 const TechStack: React.FC = () => {
