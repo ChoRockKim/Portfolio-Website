@@ -1,12 +1,14 @@
+// React 라이브러리 및 상태 관리 임포트
 import React, { useState } from 'react';
+// 프로젝트 모달 컴포넌트 임포트
 import ProjectModal from '../components/ProjectModal';
 
+// 프로젝트 데이터 구조 정의
 interface Project {
   title: string;
   category: string;
   description: string;
-  tags: string[];
-  image: string;
+  image: string[];
   techStack: string[];
   features: string[];
   demoLink: string;
@@ -15,72 +17,84 @@ interface Project {
   lastUpdated: string;
 }
 
+// Projects 페이지 컴포넌트
 const Projects: React.FC = () => {
+  // 활성화된 필터 상태
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const filters = ['All', 'Web App', 'Mobile', 'Data Analysis'];
+  const filters = ['All', 'Web App', 'Mobile'];
 
-  const rawProjects = [
+  const rawProjects : Project[] = [
     {
-       title: "HUFS Semester Clock",
-       category: "Web App",
-       description: "A real-time countdown service for HUFS students to track semester progress and holidays. Built to enhance academic planning.",
-       tags: ["React", "TypeScript", "Styled Components"],
-       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSwXx-VKfvxKP422VIigW78_qCTti3M0Eh3MvJMRb0cOOszBbF5BT5LCa6Cn3H1ELGY3Gxauu8hL6V8dtxMDzrjmsk4VYCvJveiNkQ8D9y8EwMpR-vMlRYhgakHcwgZ9hLPNCr8-LDLauOKtbk-W63KVyFR3ls5fG_V_ENBCsRW7qHfQ8DAkpnj5EatK-3XUMJpaHi5iNa_U1ZdwKrnLexiuI_Wl5VNSnp99NVanvNKNrilPo9LMH9zzhG-jVDHc8rEsJWXyR1k_vG"
+      title: "외대종강시계",
+      category: "Web App",
+      description: "약 100명의 학우들이 사용하는 크롬익스텐션 서비스입니다.",
+      image: ["/src/assets/hufsclock/설캠 낮.png", "/src/assets/hufsclock/설캠 밤.png", "/src/assets/hufsclock/위젯 창.png"],
+      techStack: ["React.js", "FastApi", "React Query", "Zustand", "vercel"],
+      features: [
+         "파이썬의 FastAPI를 통해 데이터를 처리",
+         "Swiper.js를 활용한 웹앱 스타일 UI 구현",
+         "Zustand & Chrome Storage를 연동한 실시간 상태 관리",
+         "React Query를 통한 데이터 캐싱 및 로딩 최적화"
+      ],
+      demoLink: "https://chromewebstore.google.com/detail/hufs-%EC%A2%85%EA%B0%95%EC%8B%9C%EA%B3%84/pgfecnhkdopaheeiipmfikblmjmiiojj?hl=ko",
+      githubLink: "https://github.com/ChoRockKim/HUFS_Clock_REACT_CHROME_EXTENSION",
+      projectId: "",
+      lastUpdated: "Feb 2026"
     },
-    {
-       title: "Fullstack Blog",
-       category: "Web Dev",
-       description: "A personal blog platform built from scratch supporting markdown rendering, comments, and admin dashboard.",
-       tags: ["Next.js", "Node.js", "PostgreSQL"],
-       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_KPdN3pGsqQ_HlztbQljuE9gATJseHt5C1NkiXyPfsgjYfO43p4AB-QdAOk0L65qw081XLcyuvsIw86L4ixOMMgUZLTkilNkvFGKrXhI_jtEpF_dfVg-ApXZHHrB51YlwaMJDYFq4sqN8n-tDxT75NpANCdQzI65mcMwEJUWAuJDbsv8Xako_-CscXdOqEaM1Bb6ghTVhX_QInhiPW6PKuZqFFo8ZFNI16WPeupnmW5_n_W9GvQRDtYOGwhETxbK5P_7aD_-OAm"
-    },
-    {
-       title: "Daily Task Master",
-       category: "Mobile",
-       description: "Productivity mobile application focused on gesture-based task management and daily routine tracking.",
-       tags: ["Flutter", "Firebase", "Dart"],
-       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCiIbv1SJr0w8Oh8FHGijgAazRJT9pCaeUDf-2MP2BtxWP_1DpO5nKjKVhqtCCNwkR4iZj_takQZkovzuBpxukrOvvW6uc6OLS17PdKRDRlk6z9CLQsFtZNbsf_jGJI3Rr6JtQe8GlRWtQzWJcvsSLxvNTFplZxTlQZnH6xQJCh-03KGtO4Gs2Vlf57mgijjGhOhEZuwlh4lwSHQd73WdrRZ4m9qsRYl8RhHYAbmxTcy03XTwfQ9iriq6kGtbBBNILpgADihxcnpokq"
-    },
-    {
-       title: "Sales Trend Analyzer",
-       category: "Data",
-       description: "Analyzing e-commerce sales trends using Python to predict future demand and optimize inventory.",
-       tags: ["Python", "Pandas", "Jupyter"],
-       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5ZztE5zTy0BKTGl5C3WGUwNhP6m64YXhuPxGufxSSSOKiz2q3fX0k3K8KSiwfIORXVaOM_ATTozXQKt8vr_0kTlU3MSuOnvRwoaGryWfpwCMQ2lVIjc_uyDcyF-UqeWL9rNFU2OWcS_GE46040AoH3hrv4Z5m9-Gi7R6Z5YRjLKCq73xmvrXgxiJrtttFa7gUeF6UlQhN84z0Hg5g5jCZQ7G36812xkxHMiZ-PtlZX7OdPqROXdANUf9sVjdY4UDw4gWx_hP1OkLp"
-    },
-    {
-       title: "NLP Sentiment Analysis",
-       category: "AI/ML",
-       description: "Research project focusing on sentiment analysis of Korean movie reviews using Transformer models.",
-       tags: ["PyTorch", "HuggingFace", "KoBERT"],
-       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeUIZfVrhZLxDdi2u5T6GtyRIi31O4FYginLg45UOOO4UEy4nojEYJFVPQz57kEESAOSwkRz4tJOqTk6B0jG-LOo-xGVj0-sMdQNZ4cFBh5kHv81f_3DSCXXjleGtg15AkM5VdH5MZdOgPWoUVVfWzB8ty9DeN-WcFTd8vKyMKskqNcgYYw2Xj8U-pNdJYRKpljdZeS1juBP4geBMkNi6eAFnuaA2KxCsS1Un-gnVGyn9tsasmHb6qjkjTkPTLIkwFOKXVyNHrjOnF"
-    },
-    {
-       title: "Personal Portfolio",
-       category: "Web",
-       description: "The website you are currently viewing. Designed with a modern dark theme and responsive layout.",
-       tags: ["HTML/CSS", "Tailwind", "UI/UX"],
-       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZY5Yqth9Cax_27YpmE-di2x3bak--ZPbYWS7f91wtBsbCV5cq76rbjkJswll9fVA4AI1OFn_-1hEBfyLDKvNlDKTcaZjDc_GSSo9S3Z5y9suVtDmYkG6JTj-R2kvBvFKCw69gsaszHpfMMvi4ZGJArCXo9_EVC4_hIQyIX0xFWB6SGBv98TCLy3z0zPO_NCGY0LkuXdad5oCOPU1W6TaeipxNvqdkMzCqC5i1ALvUJubzm9VoClaZzd83J-Ld7WQceB98zjUtdHkx"
-    }
+   //  {
+   //     title: "Fullstack Blog",
+   //     category: "Web Dev",
+   //     description: "A personal blog platform built from scratch supporting markdown rendering, comments, and admin dashboard.",
+   //     tags: ["Next.js", "Node.js", "PostgreSQL"],
+   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_KPdN3pGsqQ_HlztbQljuE9gATJseHt5C1NkiXyPfsgjYfO43p4AB-QdAOk0L65qw081XLcyuvsIw86L4ixOMMgUZLTkilNkvFGKrXhI_jtEpF_dfVg-ApXZHHrB51YlwaMJDYFq4sqN8n-tDxT75NpANCdQzI65mcMwEJUWAuJDbsv8Xako_-CscXdOqEaM1Bb6ghTVhX_QInhiPW6PKuZqFFo8ZFNI16WPeupnmW5_n_W9GvQRDtYOGwhETxbK5P_7aD_-OAm"
+   //  },
+   //  {
+   //     title: "Daily Task Master",
+   //     category: "Mobile",
+   //     description: "Productivity mobile application focused on gesture-based task management and daily routine tracking.",
+   //     tags: ["Flutter", "Firebase", "Dart"],
+   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCiIbv1SJr0w8Oh8FHGijgAazRJT9pCaeUDf-2MP2BtxWP_1DpO5nKjKVhqtCCNwkR4iZj_takQZkovzuBpxukrOvvW6uc6OLS17PdKRDRlk6z9CLQsFtZNbsf_jGJI3Rr6JtQe8GlRWtQzWJcvsSLxvNTFplZxTlQZnH6xQJCh-03KGtO4Gs2Vlf57mgijjGhOhEZuwlh4lwSHQd73WdrRZ4m9qsRYl8RhHYAbmxTcy03XTwfQ9iriq6kGtbBBNILpgADihxcnpokq"
+   //  },
+   //  {
+   //     title: "Sales Trend Analyzer",
+   //     category: "Data",
+   //     description: "Analyzing e-commerce sales trends using Python to predict future demand and optimize inventory.",
+   //     tags: ["Python", "Pandas", "Jupyter"],
+   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5ZztE5zTy0BKTGl5C3WGUwNhP6m64YXhuPxGufxSSSOKiz2q3fX0k3K8KSiwfIORXVaOM_ATTozXQKt8vr_0kTlU3MSuOnvRwoaGryWfpwCMQ2lVIjc_uyDcyF-UqeWL9rNFU2OWcS_GE46040AoH3hrv4Z5m9-Gi7R6Z5YRjLKCq73xmvrXgxiJrtttFa7gUeF6UlQhN84z0Hg5g5jCZQ7G36812xkxHMiZ-PtlZX7OdPqROXdANUf9sVjdY4UDw4gWx_hP1OkLp"
+   //  },
+   //  {
+   //     title: "NLP Sentiment Analysis",
+   //     category: "AI/ML",
+   //     description: "Research project focusing on sentiment analysis of Korean movie reviews using Transformer models.",
+   //     tags: ["PyTorch", "HuggingFace", "KoBERT"],
+   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeUIZfVrhZLxDdi2u5T6GtyRIi31O4FYginLg45UOOO4UEy4nojEYJFVPQz57kEESAOSwkRz4tJOqTk6B0jG-LOo-xGVj0-sMdQNZ4cFBh5kHv81f_3DSCXXjleGtg15AkM5VdH5MZdOgPWoUVVfWzB8ty9DeN-WcFTd8vKyMKskqNcgYYw2Xj8U-pNdJYRKpljdZeS1juBP4geBMkNi6eAFnuaA2KxCsS1Un-gnVGyn9tsasmHb6qjkjTkPTLIkwFOKXVyNHrjOnF"
+   //  },
+   //  {
+   //     title: "Personal Portfolio",
+   //     category: "Web",
+   //     description: "The website you are currently viewing. Designed with a modern dark theme and responsive layout.",
+   //     tags: ["HTML/CSS", "Tailwind", "UI/UX"],
+   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZY5Yqth9Cax_27YpmE-di2x3bak--ZPbYWS7f91wtBsbCV5cq76rbjkJswll9fVA4AI1OFn_-1hEBfyLDKvNlDKTcaZjDc_GSSo9S3Z5y9suVtDmYkG6JTj-R2kvBvFKCw69gsaszHpfMMvi4ZGJArCXo9_EVC4_hIQyIX0xFWB6SGBv98TCLy3z0zPO_NCGY0LkuXdad5oCOPU1W6TaeipxNvqdkMzCqC5i1ALvUJubzm9VoClaZzd83J-Ld7WQceB98zjUtdHkx"
+   //  }
   ];
 
-  const enrichedProjects: Project[] = rawProjects.map((p, index) => ({
-      ...p,
-      techStack: p.tags,
-      features: [
-          "Real-time data synchronization",
-          "Responsive user interface",
-          "Secure authentication system",
-          "Interactive dashboard visualization"
-      ],
-      demoLink: "#",
-      githubLink: "#",
-      projectId: `#PRJ-${202300 + index}`,
-      lastUpdated: "Dec 2023"
-  }));
+//   const enrichedProjects: Project[] = rawProjects.map((p, index) => ({
+//       ...p,
+//       techStack: p.tags,
+//       features: [
+//           "Real-time data synchronization",
+//           "Responsive user interface",
+//           "Secure authentication system",
+//           "Interactive dashboard visualization"
+//       ],
+//       demoLink: "#",
+//       githubLink: "#",
+//       projectId: `#PRJ-${202300 + index}`,
+//       lastUpdated: "Dec 2023"
+//   }));
 
   const openModal = (project: Project) => {
       setSelectedProject(project);
@@ -93,9 +107,9 @@ const Projects: React.FC = () => {
   };
 
   const filteredProjects = activeFilter === 'All'
-    ? enrichedProjects
-    : enrichedProjects.filter(p => {
-        if (activeFilter === 'Data Analysis' && p.category === 'Data') return true;
+    ? rawProjects
+    : rawProjects.filter(p => {
+        if (activeFilter === 'React.js' && p.category === 'react') return true;
         if (activeFilter === 'Web App' && (p.category === 'Web App' || p.category === 'Web' || p.category === 'Web Dev')) return true;
         if (activeFilter === 'Mobile' && p.category === 'Mobile') return true;
         return p.category === activeFilter;
@@ -139,7 +153,7 @@ const Projects: React.FC = () => {
                 className="group flex flex-col bg-card-dark rounded-xl overflow-hidden border border-card-border hover:border-primary transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer"
              >
                 <div className="relative w-full aspect-video overflow-hidden">
-                   <div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url("${project.image}")` }}>
+                   <div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url("${project.image[0]}")` }}>
                    </div>
                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <span className="text-white font-bold flex items-center gap-2 hover:underline">
@@ -156,8 +170,8 @@ const Projects: React.FC = () => {
                       {project.description}
                    </p>
                    <div className="mt-auto pt-4 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                         <span key={tag} className="text-xs font-medium px-2 py-1 rounded bg-background-dark text-slate-300 border border-card-border">{tag}</span>
+                      {project.techStack.map((stack) => (
+                         <span key={stack} className="text-xs font-medium px-2 py-1 rounded bg-background-dark text-slate-300 border border-card-border">{stack}</span>
                       ))}
                    </div>
                 </div>

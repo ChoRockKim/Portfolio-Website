@@ -1,28 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import WhatDoIDo from '../components/WhatDoIDo/WhatDoIDo';
+import type { WhatDoIDoTypeList } from '../types/Home/WhatDoIDo';
+import ScrollToNext from '../utils/ScrollToNext.jsx'
 
 const Home: React.FC = () => {
+
+   const whatDoIDoObj 
+   : WhatDoIDoTypeList = [
+      {  title : "모던 프론트엔드 개발",
+         explain : ["React.js 를 이용한 프론트엔드 개발 경험이 있습니다. Javascript es6+ 문법과 Typescript 사용에 능통합니다.",
+                    "React native 를 통한 앱 개발 경험과, Spring boot 를 통한 Rest api 개발 경험이 있습니다."],
+         icon : "code"
+      },
+      { title : "샘플1",
+         explain : ["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptate laboriosam animi. Quasi voluptatibus recusandae dolorem consectetur omnis aspernatur molestiae sit, enim ipsa magnam, nam vitae unde quas quae quo."],
+         icon : "psychology"
+      },
+      { title : "샘플2",
+         explain : ["Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis provident dicta temporibus beatae at incidunt aliquid sunt tempora consequuntur! Sapiente sed animi minus explicabo perferendis neque quam illum, voluptatum nihil."],
+         icon : "smartphone"
+      }
+   ]
+
   return (
+   <>
     <div className="w-full max-w-[1200px] px-6 lg:px-20 py-10 flex flex-col gap-12">
        {/* Hero Section */}
        <div className="@container">
           <div className="flex flex-col gap-8 py-10 lg:flex-row lg:items-center">
-             <div className="w-full lg:w-1/2 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-background-dark/80 to-transparent z-10"></div>
-                <img
-                  alt="Abstract coding background"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvxU1FmDRxOnrhzf2i235OyaOr70gf27xnKy43VXM0s7iA9-I1NyGOytMZl_0ga4d7lleTiPvADiP4WM_QDl_PlAjtvA5WThb7aS__dOawUxcoTglSwsvrj2sBjv-26dw0t2RDx--zP2xGGuzU8rxfyAgz4D0I7UdyfnwHfY5bT-PLVmuEghzGBR7pwnU3xASKevaJZ_u2i8y1rxKAXKUj8b6tonS4ILbUOmRvfE3IoCt6vWVQXTXFYjhIJi1OFnWb73LwON6mpMM"
-                />
-             </div>
-             <div className="flex flex-col gap-6 lg:w-1/2 lg:pl-10 justify-center">
+             
+             <div className="flex flex-col gap-6 lg:pl-10 justify-center">
                 <div className="flex flex-col gap-3 text-left">
                    <span className="text-primary font-bold tracking-wider uppercase text-sm">Developer Portfolio</span>
-                   <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] lg:text-5xl">
-                      Hello,<br/>I'm Taeheon Kim
+                   <h1 className="text-white text-4xl font-black lg:leading-tight tracking-[-0.033em] lg:text-5xl">
+                      안녕하세요,<br/>프론트엔드 개발자 <br/> <span className="text-green-400">김태헌</span>입니다
                    </h1>
                    <p className="text-white/80 text-lg font-normal leading-relaxed mt-2">
-                      A developer majoring in ELLT (English Linguistics & Language Technology) and Software at HUFS. Creating new value through the convergence of linguistic insights and software technology.
+                      화면 너머의 데이터 흐름까지 이해하는 프론트엔드 개발자입니다. React 생태계를 활용한 인터페이스 구현은 물론, 백엔드 메커니즘에 대한 깊은 이해를 바탕으로 최적화된 API 구조를 함께 고민하고 설계합니다.
                    </p>
                 </div>
                 <div className="flex flex-wrap gap-4 mt-2">
@@ -34,6 +49,14 @@ const Home: React.FC = () => {
                    </Link>
                 </div>
              </div>
+             <div className="lg:w-full w-0 translate-x-1 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-background-dark/80 to-transparent z-10"></div>
+                <img
+                  alt="Abstract coding background"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvxU1FmDRxOnrhzf2i235OyaOr70gf27xnKy43VXM0s7iA9-I1NyGOytMZl_0ga4d7lleTiPvADiP4WM_QDl_PlAjtvA5WThb7aS__dOawUxcoTglSwsvrj2sBjv-26dw0t2RDx--zP2xGGuzU8rxfyAgz4D0I7UdyfnwHfY5bT-PLVmuEghzGBR7pwnU3xASKevaJZ_u2i8y1rxKAXKUj8b6tonS4ILbUOmRvfE3IoCt6vWVQXTXFYjhIJi1OFnWb73LwON6mpMM"
+                />
+             </div>
           </div>
        </div>
 
@@ -44,48 +67,22 @@ const Home: React.FC = () => {
                 What I Do
              </h2>
              <p className="text-white/70 text-base font-normal leading-normal max-w-[720px]">
-                Building innovative solutions based on linguistic engineering and software development capabilities.
+                {/* Building innovative solutions based on linguistic engineering and software development capabilities. */}
              </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-             <div className="group flex flex-col gap-4 rounded-2xl border border-card-border bg-card-dark p-6 hover:-translate-y-1 transition-transform duration-300 shadow-lg">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                   <span className="material-symbols-outlined">code</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                   <h3 className="text-white text-xl font-bold">Web Development</h3>
-                   <p className="text-white/60 text-sm leading-relaxed">
-                      Developing scalable and responsive full-stack web applications utilizing React and Node.js.
-                   </p>
-                </div>
-             </div>
-             <div className="group flex flex-col gap-4 rounded-2xl border border-card-border bg-card-dark p-6 hover:-translate-y-1 transition-transform duration-300 shadow-lg">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                   <span className="material-symbols-outlined">psychology</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                   <h3 className="text-white text-xl font-bold">Natural Language Processing</h3>
-                   <p className="text-white/60 text-sm leading-relaxed">
-                      Analyzing text data and extracting meaningful information utilizing Python and modern deep learning models (BERT, GPT).
-                   </p>
-                </div>
-             </div>
-             <div className="group flex flex-col gap-4 rounded-2xl border border-card-border bg-card-dark p-6 hover:-translate-y-1 transition-transform duration-300 shadow-lg">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                   <span className="material-symbols-outlined">smartphone</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                   <h3 className="text-white text-xl font-bold">Mobile Apps</h3>
-                   <p className="text-white/60 text-sm leading-relaxed">
-                      Building cross-platform apps that work smoothly on both iOS and Android environments using Flutter and Native technologies.
-                   </p>
-                </div>
-             </div>
+             
+             { whatDoIDoObj.map((datas, idx) => {
+                  return (
+                     <WhatDoIDo datas = {datas} key={idx}/>
+                  )
+             })}
           </div>
        </div>
 
        {/* Featured Projects Section */}
-       <div className="flex flex-col gap-8 py-10">
+       {/* <div className="flex flex-col gap-8 py-10">
           <div className="flex items-center justify-between">
              <h2 className="text-white text-2xl font-bold leading-tight">Featured Projects</h2>
              <Link to="/projects" className="text-primary text-sm font-bold hover:underline">View All Projects →</Link>
@@ -133,8 +130,10 @@ const Home: React.FC = () => {
                 </div>
              </div>
           </div>
-       </div>
+       </div> */}
+      <ScrollToNext nextPath='tech-stack' nextProjectName='Skills' />
     </div>
+    </>
   );
 };
 
