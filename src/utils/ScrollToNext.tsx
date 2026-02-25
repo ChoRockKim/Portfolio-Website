@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react'; // 1. useRef 추가
+import { useEffect, useState, useCallback, useRef } from 'react'; // 1. useRef 추가
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -33,7 +33,7 @@ const ScrollToNext = ({ nextPath, nextProjectName } : { nextPath : string, nextP
     return () => window.removeEventListener('scroll', checkBottom);
   }, [isAtBottom]); // isAtBottom 상태 변화를 감지하도록 의존성 추가
 
-const handleWheel = useCallback((e) => {
+const handleWheel = useCallback((e : WheelEvent) => {
   if (!isAtBottom) return;
   
   // 1. 안전 잠금 시간 상향 (0.3초 -> 0.5초로 하면 더 확실합니다)
