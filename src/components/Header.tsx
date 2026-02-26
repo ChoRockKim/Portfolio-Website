@@ -82,7 +82,9 @@ const Header: React.FC = () => {
               </NavLink>
             ))}
           </nav>
-          <button className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+          <button
+            onClick={()=>{navigate('/contact'); setIsMenuOpen(!isMenuOpen)}}
+            className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
             <span className="truncate">Contact</span>
           </button>
         </div>
