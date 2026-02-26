@@ -28,7 +28,7 @@ const Home: React.FC = () => {
     <div className="w-full max-w-[1200px] px-6 lg:px-20 py-10 flex flex-col gap-12">
        {/* Hero Section */}
        <div className="@container">
-          <div className="flex flex-col gap-8 py-10 lg:flex-row lg:items-center">
+          <div className="flex flex-col-reverse gap-8 py-10 lg:flex-row lg:items-center">
              
              <div className="flex flex-col gap-6 lg:pl-10 justify-center">
                 <div className="flex flex-col gap-3 text-left">
@@ -50,13 +50,14 @@ const Home: React.FC = () => {
                    </Link>
                 </div>
              </div>
-             <div className="lg:w-full w-0 translate-x-1 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-background-dark/80 to-transparent z-10"></div>
+             <div className="lg:w-9/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
+                <div className="absolute inset-0 bg-gradient-to-tr  to-transparent z-10 "></div>
                 <img
                   alt="Abstract coding background"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvxU1FmDRxOnrhzf2i235OyaOr70gf27xnKy43VXM0s7iA9-I1NyGOytMZl_0ga4d7lleTiPvADiP4WM_QDl_PlAjtvA5WThb7aS__dOawUxcoTglSwsvrj2sBjv-26dw0t2RDx--zP2xGGuzU8rxfyAgz4D0I7UdyfnwHfY5bT-PLVmuEghzGBR7pwnU3xASKevaJZ_u2i8y1rxKAXKUj8b6tonS4ILbUOmRvfE3IoCt6vWVQXTXFYjhIJi1OFnWb73LwON6mpMM"
+                  src="/profile/me.jpeg"
                 />
+                {/* https://lh3.googleusercontent.com/aida-public/AB6AXuDSvxU1FmDRxOnrhzf2i235OyaOr70gf27xnKy43VXM0s7iA9-I1NyGOytMZl_0ga4d7lleTiPvADiP4WM_QDl_PlAjtvA5WThb7aS__dOawUxcoTglSwsvrj2sBjv-26dw0t2RDx--zP2xGGuzU8rxfyAgz4D0I7UdyfnwHfY5bT-PLVmuEghzGBR7pwnU3xASKevaJZ_u2i8y1rxKAXKUj8b6tonS4ILbUOmRvfE3IoCt6vWVQXTXFYjhIJi1OFnWb73LwON6mpMM */}
              </div>
           </div>
        </div>

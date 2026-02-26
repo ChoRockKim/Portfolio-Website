@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
     {
       title: "외대종강시계",
       category: "Web App",
-      description: "약 100명의 학우들이 사용하는 크롬익스텐션 서비스입니다.",
+      description: "'외대종강시계'는 약 100명의 학우들이 사용하는 크롬익스텐션 서비스입니다. 한국외국어대학교 학생들을 위해 개발된 웹 애플리케이션으로, 학기 종강까지 남은 시간을 실시간으로 시각화하여 보여줍니다. 단순한 디데이 기능을 넘어, 학사 일정 확인 및 캠퍼스 날씨 정보를 통합적으로 제공하여 학생들의 학기 말 동기 부여와 편의를 돕기 위해 기획되었습니다.",
       image: ["/hufsclock/seoul-main.png", "/hufsclock/seoul-night.png", "hufsclock/widget.png"],
       techStack: ["React.js", "FastApi", "React Query", "Zustand", "vercel", "Vite", "SCSS", "Formspree", "Axios"],
       features: [

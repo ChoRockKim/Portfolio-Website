@@ -1,11 +1,12 @@
 // React 및 라우터 상태 관리 라이브러리 임포트
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 // Header 컴포넌트 - 상단 네비게이션 바
 const Header: React.FC = () => {
   // 모바일 메뉴 열기/닫기 상태 관리
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   // 메뉴 열기/닫기 토글 함수
   const toggleMenu = () => {
@@ -48,7 +49,8 @@ const Header: React.FC = () => {
             </NavLink>
           ))}
         </nav>
-        <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+        <button className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]"
+        onClick={()=>{navigate('/contact')}}>
           <span className="truncate">Contact</span>
         </button>
       </div>

@@ -7,7 +7,8 @@ import Blog from './pages/Blog';
 import Experience from './pages/Experience';
 import TechStack from './pages/TechStack';
 import Projects from './pages/Projects';
-import ScrollToTop from './components/Common/ScrollToTop.jsx'
+import ScrollToTop from './components/Common/ScrollToTop.js'
+import Contact from './pages/Contact.js';
 
 // 메인 App 컴포넌트 - 라우팅 및 레이아웃 구조 정의
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/tech-stack" element={<TechStack />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </Layout>
     </Router>
