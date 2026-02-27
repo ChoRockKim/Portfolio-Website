@@ -25,7 +25,9 @@ const Header: React.FC = () => {
   return (
     // 헤더: 상단 고정, 반투명 배경, 드롭다운 블러 효과
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 py-4 lg:px-20 bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
-      <div className="flex items-center gap-4 text-white">
+      <div 
+        onClick={()=>{navigate('/')}}
+        className="flex items-center gap-4 text-white cursor-pointer">
         <div className="size-6 text-primary flex items-center justify-center">
           <span className="material-symbols-outlined !text-2xl">code</span>
         </div>
