@@ -38,7 +38,7 @@ const Home: React.FC = () => {
                    </h1> */}
                    <TypingText text={"안녕하세요,\n프론트엔드 개발자 \n김태헌 입니다."} />
                    <p className="text-white/80 text-lg font-normal leading-relaxed mt-2">
-                      화면 너머의 데이터 흐름까지 이해하는 프론트엔드 개발자입니다. React 생태계를 활용한 인터페이스 구현은 물론, 백엔드 메커니즘에 대한 깊은 이해를 바탕으로 최적화된 API 구조를 함께 고민하고 설계합니다.
+                      화면 너머의 데이터 흐름까지 이해하는 프론트엔드 개발자입니다. <br/>React 생태계를 활용한 인터페이스 구현은 물론, 백엔드 메커니즘에 대한 깊은 이해를 바탕으로 최적화된 API 구조를 함께 고민하고 설계합니다.
                    </p>
                 </div>
                 <div className="flex flex-wrap gap-4 mt-2">
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                    </Link> */}
                 </div>
              </div>
-             <div className="lg:w-9/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
+             <div className="lg:w-6/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
                 <div className="absolute inset-0 bg-gradient-to-tr  to-transparent z-10 "></div>
                 <img
                   alt="Abstract coding background"
