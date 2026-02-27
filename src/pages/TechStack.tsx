@@ -44,6 +44,11 @@ const TechStack: React.FC = () => {
          explain : "SCSS의 변수, 믹스인(Mixin), 중첩(Nesting) 기능을 활용하여 유지보수가 용이하고 재사용 가능한 스타일 구조를 설계합니다.",
          path : "M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zM9.615 15.998c.175.645.156 1.248-.024 1.792l-.065.18c-.024.061-.052.12-.078.176-.14.29-.326.56-.555.81-.698.759-1.672 1.047-2.09.805-.45-.262-.226-1.335.584-2.19.871-.918 2.12-1.509 2.12-1.509v-.003l.108-.061zm9.911-10.861c-.542-2.133-4.077-2.834-7.422-1.645-1.989.707-4.144 1.818-5.693 3.267C4.568 8.48 4.275 9.98 4.396 10.607c.427 2.211 3.457 3.657 4.703 4.73v.006c-.367.18-3.056 1.529-3.686 2.925-.675 1.47.105 2.521.615 2.655 1.575.436 3.195-.36 4.065-1.649.84-1.261.766-2.881.404-3.676.496-.135 1.08-.195 1.83-.104 2.101.24 2.521 1.56 2.43 2.1-.09.539-.523.854-.674.944-.15.091-.195.12-.181.181.015.09.091.09.21.075.165-.03 1.096-.45 1.141-1.471.045-1.29-1.186-2.729-3.375-2.7-.9.016-1.471.091-1.875.256-.03-.045-.061-.075-.105-.105-1.35-1.455-3.855-2.475-3.75-4.41.03-.705.285-2.564 4.8-4.814 3.705-1.846 6.661-1.335 7.171-.21.733 1.604-1.576 4.59-5.431 5.024-1.47.165-2.235-.404-2.431-.615-.209-.225-.239-.24-.314-.194-.12.06-.045.255 0 .375.12.3.585.825 1.396 1.095.704.225 2.43.359 4.5-.45 2.324-.899 4.139-3.405 3.614-5.505l.073.067z",
          color : "#CF649A"
+      },
+      { framework : "Javascript ES6+",
+         explain : "ES6+ 문법에 익숙하며, 효율적인 데이터 처리와 비동기 프로그래밍을 통한 최적의 사용자 경험을 구현합니다.",
+         path : "M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z",
+         color : "#F7DF1E"
       }
    ]
    
@@ -89,18 +94,23 @@ const TechStack: React.FC = () => {
    ]
 
    
+
+   
    
   return (
     <div className="flex-1 flex flex-col items-center py-10 px-6 lg:px-20 w-full max-w-7xl mx-auto">
        {/* Hero Section */}
        <div className="w-full flex flex-col gap-6 mb-16 items-center text-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">
              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
              My Skills
-          </div>
+          </div> */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-             Technological <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-primary">Proficiency</span>
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-primary">Tech Stacks</span>
           </h1>
+          <p className="text-text-secondary text-lg font-normal leading-relaxed max-w-2xl">
+            효율적인 개발과 지속 가능한 서비스를 위해 활용하는 기술들입니다.
+          </p>
           <p className="text-slate-400 text-lg leading-relaxed max-w-2xl">
              {/* A curated list of the tools, languages, and frameworks I use to build robust, scalable, and user-friendly applications. */}
           </p>

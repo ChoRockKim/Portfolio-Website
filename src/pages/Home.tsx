@@ -9,17 +9,17 @@ const Home: React.FC = () => {
    const whatDoIDoObj 
    : WhatDoIDoTypeList = [
       {  title : "모던 프론트엔드 개발",
-         explain : ["React.js 를 이용한 프론트엔드 개발 경험이 있습니다. Javascript es6+ 문법과 Typescript 사용에 능통합니다.",
-                    "React native 를 통한 앱 개발 경험과, Spring boot 를 통한 Rest api 개발 경험이 있습니다."],
+         explain : ["React 생태계를 이용해 SPA 프론트엔드를 개발합니다. Javascript es6+ 문법과 Typescript 사용에 능통합니다.",
+                    "React native 를 통한 앱 개발 경험이 있습니다."],
          icon : "code"
       },
-      { title : "샘플1",
-         explain : ["Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptate laboriosam animi. Quasi voluptatibus recusandae dolorem consectetur omnis aspernatur molestiae sit, enim ipsa magnam, nam vitae unde quas quae quo."],
+      { title : "논리적 사고와 커뮤니케이션",
+         explain : ["기술적 난제를 논리적으로 분석하고 해결책을 제시합니다. 원활한 소통을 바탕으로 팀의 목표에 기여하는 개발을 추구합니다."],
          icon : "psychology"
       },
-      { title : "샘플2",
-         explain : ["Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis provident dicta temporibus beatae at incidunt aliquid sunt tempora consequuntur! Sapiente sed animi minus explicabo perferendis neque quam illum, voluptatum nihil."],
-         icon : "smartphone"
+      { title : "기술의 유기적인 연결 경험",
+         explain : ["프론트엔드(React)에서 만든 데이터를 백엔드(Spring Boot)로 전달하고 저장하는 일련의 과정을 직접 연결하며 풀스택 개발의 기초를 다지고 있습니다."],
+         icon : "database"
       }
    ]
 
@@ -45,9 +45,9 @@ const Home: React.FC = () => {
                    <Link to="/projects" className="flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-lg shadow-primary/25">
                       View Projects
                    </Link>
-                   <Link to="/blog" className="flex items-center justify-center rounded-full h-12 px-8 bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-white text-base font-bold backdrop-blur-sm">
+                   {/* <Link to="/blog" className="flex items-center justify-center rounded-full h-12 px-8 bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-white text-base font-bold backdrop-blur-sm">
                       Read Blog
-                   </Link>
+                   </Link> */}
                 </div>
              </div>
              <div className="lg:w-9/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 // 프로젝트 모달 컴포넌트 임포트
 import ProjectModal from '../components/ProjectModal';
+import { useNavigate } from 'react-router-dom';
+
 
 // 프로젝트 데이터 구조 정의
 interface Project {
@@ -19,6 +21,7 @@ interface Project {
 
 // Projects 페이지 컴포넌트
 const Projects: React.FC = () => {
+   const navigate = useNavigate();
   // 활성화된 필터 상태
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -177,6 +180,20 @@ const Projects: React.FC = () => {
                 </div>
              </article>
           ))}
+       </div>
+       {/* Call to Action Area */}
+       <div className="mt-12 rounded-xl bg-gradient-to-r from-card-dark to-background-dark border border-primary/20 p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-700"></div>
+          <div className="relative z-10 text-center md:text-left">
+             <h4 className="text-2xl font-bold text-white mb-2">Want to contact me?</h4>
+             <p className="text-text-secondary">함께 고민하고 성장할 수 있는 기회를 기다립니다.</p>
+          </div>
+          <button 
+            onClick={()=>{navigate('/contact')}}
+            className="relative z-10 flex items-center gap-2 bg-primary hover:bg-white text-slate-900 font-bold py-3 px-6 rounded-lg transition-all shadow-lg hover:shadow-primary/50">
+             {/* <span className="material-symbols-outlined">chevron_right</span> */}
+             <span>Contact</span>
+          </button>
        </div>
 
        {/* Pagination */}
