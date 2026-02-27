@@ -31,70 +31,70 @@ const Projects: React.FC = () => {
       title: "외대종강시계",
       category: "Web App",
       description: "'외대종강시계'는 약 100명의 학우들이 사용하는 크롬익스텐션 서비스입니다. 한국외국어대학교 학생들을 위해 개발된 웹 애플리케이션으로, 학기 종강까지 남은 시간을 실시간으로 시각화하여 보여줍니다. 단순한 디데이 기능을 넘어, 학사 일정 확인 및 캠퍼스 날씨 정보를 통합적으로 제공하여 학생들의 학기 말 동기 부여와 편의를 돕기 위해 기획되었습니다.",
-      image: ["/hufsclock/seoul-main.png", "/hufsclock/seoul-night.png", "hufsclock/widget.png"],
-      techStack: ["React.js", "FastApi", "React Query", "Zustand", "vercel", "Vite", "SCSS", "Formspree", "Axios"],
+      image: ["/hufsclock/seoul-main.png", "/hufsclock/seoul-night.png", "/hufsclock/widget.png", "/hufsclock/timeLine.png"],
+      techStack: ["React.js", "FastApi", "React Query", "Zustand", "vercel", "Vite", "SCSS", "Formspree", "Axios", "Swiper.js"],
       features: [
          "파이썬의 FastAPI를 통해 데이터를 처리",
          "Swiper.js를 활용한 웹앱 스타일 UI 구현",
          "Zustand & Chrome Storage를 연동한 실시간 상태 관리",
-         "React Query를 통한 데이터 캐싱 및 로딩 최적화"
+         "React Query를 통한 데이터 캐싱 및 로딩 최적화",
+         "기상청 단기예보 API를 활용한 날씨 위젯"
       ],
-      demoLink: "https://chromewebstore.google.com/detail/hufs-%EC%A2%85%EA%B0%95%EC%8B%9C%EA%B3%84/pgfecnhkdopaheeiipmfikblmjmiiojj?hl=ko",
+      demoLink: "https://hufsclock2026.vercel.app/",
       githubLink: "https://github.com/ChoRockKim/HUFS_Clock_REACT_CHROME_EXTENSION",
       projectId: "",
       lastUpdated: "Feb 2026"
     },
-   //  {
-   //     title: "Fullstack Blog",
-   //     category: "Web Dev",
-   //     description: "A personal blog platform built from scratch supporting markdown rendering, comments, and admin dashboard.",
-   //     tags: ["Next.js", "Node.js", "PostgreSQL"],
-   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA9d_KPdN3pGsqQ_HlztbQljuE9gATJseHt5C1NkiXyPfsgjYfO43p4AB-QdAOk0L65qw081XLcyuvsIw86L4ixOMMgUZLTkilNkvFGKrXhI_jtEpF_dfVg-ApXZHHrB51YlwaMJDYFq4sqN8n-tDxT75NpANCdQzI65mcMwEJUWAuJDbsv8Xako_-CscXdOqEaM1Bb6ghTVhX_QInhiPW6PKuZqFFo8ZFNI16WPeupnmW5_n_W9GvQRDtYOGwhETxbK5P_7aD_-OAm"
-   //  },
-   //  {
-   //     title: "Daily Task Master",
-   //     category: "Mobile",
-   //     description: "Productivity mobile application focused on gesture-based task management and daily routine tracking.",
-   //     tags: ["Flutter", "Firebase", "Dart"],
-   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCiIbv1SJr0w8Oh8FHGijgAazRJT9pCaeUDf-2MP2BtxWP_1DpO5nKjKVhqtCCNwkR4iZj_takQZkovzuBpxukrOvvW6uc6OLS17PdKRDRlk6z9CLQsFtZNbsf_jGJI3Rr6JtQe8GlRWtQzWJcvsSLxvNTFplZxTlQZnH6xQJCh-03KGtO4Gs2Vlf57mgijjGhOhEZuwlh4lwSHQd73WdrRZ4m9qsRYl8RhHYAbmxTcy03XTwfQ9iriq6kGtbBBNILpgADihxcnpokq"
-   //  },
-   //  {
-   //     title: "Sales Trend Analyzer",
-   //     category: "Data",
-   //     description: "Analyzing e-commerce sales trends using Python to predict future demand and optimize inventory.",
-   //     tags: ["Python", "Pandas", "Jupyter"],
-   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5ZztE5zTy0BKTGl5C3WGUwNhP6m64YXhuPxGufxSSSOKiz2q3fX0k3K8KSiwfIORXVaOM_ATTozXQKt8vr_0kTlU3MSuOnvRwoaGryWfpwCMQ2lVIjc_uyDcyF-UqeWL9rNFU2OWcS_GE46040AoH3hrv4Z5m9-Gi7R6Z5YRjLKCq73xmvrXgxiJrtttFa7gUeF6UlQhN84z0Hg5g5jCZQ7G36812xkxHMiZ-PtlZX7OdPqROXdANUf9sVjdY4UDw4gWx_hP1OkLp"
-   //  },
-   //  {
-   //     title: "NLP Sentiment Analysis",
-   //     category: "AI/ML",
-   //     description: "Research project focusing on sentiment analysis of Korean movie reviews using Transformer models.",
-   //     tags: ["PyTorch", "HuggingFace", "KoBERT"],
-   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeUIZfVrhZLxDdi2u5T6GtyRIi31O4FYginLg45UOOO4UEy4nojEYJFVPQz57kEESAOSwkRz4tJOqTk6B0jG-LOo-xGVj0-sMdQNZ4cFBh5kHv81f_3DSCXXjleGtg15AkM5VdH5MZdOgPWoUVVfWzB8ty9DeN-WcFTd8vKyMKskqNcgYYw2Xj8U-pNdJYRKpljdZeS1juBP4geBMkNi6eAFnuaA2KxCsS1Un-gnVGyn9tsasmHb6qjkjTkPTLIkwFOKXVyNHrjOnF"
-   //  },
-   //  {
-   //     title: "Personal Portfolio",
-   //     category: "Web",
-   //     description: "The website you are currently viewing. Designed with a modern dark theme and responsive layout.",
-   //     tags: ["HTML/CSS", "Tailwind", "UI/UX"],
-   //     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZY5Yqth9Cax_27YpmE-di2x3bak--ZPbYWS7f91wtBsbCV5cq76rbjkJswll9fVA4AI1OFn_-1hEBfyLDKvNlDKTcaZjDc_GSSo9S3Z5y9suVtDmYkG6JTj-R2kvBvFKCw69gsaszHpfMMvi4ZGJArCXo9_EVC4_hIQyIX0xFWB6SGBv98TCLy3z0zPO_NCGY0LkuXdad5oCOPU1W6TaeipxNvqdkMzCqC5i1ALvUJubzm9VoClaZzd83J-Ld7WQceB98zjUtdHkx"
-   //  }
-  ];
-
-//   const enrichedProjects: Project[] = rawProjects.map((p, index) => ({
-//       ...p,
-//       techStack: p.tags,
-//       features: [
-//           "Real-time data synchronization",
-//           "Responsive user interface",
-//           "Secure authentication system",
-//           "Interactive dashboard visualization"
-//       ],
-//       demoLink: "#",
-//       githubLink: "#",
-//       projectId: `#PRJ-${202300 + index}`,
-//       lastUpdated: "Dec 2023"
-//   }));
+    {
+      title : "토이 블로그 앱",
+      category : "Mobile",
+      description : "React Native 로 만든 토이 블로그 프로젝트입니다.",
+      image : ["/RNBlog/image1.png", "/RNBlog/image2.png", "/RNBlog/image3.png", "/RNBlog/image4.png"],
+      techStack : ["React Native", "Expo", "Spring Boot", "Kotlin", "Swagger", "Typescript"],
+      features : [
+         "Kotlin 언어로 Spring Boot 를 통해 CRUD 가능한 Rest api 설계",
+         "Swagger 통해 API 명세서 작성"
+      ],
+      demoLink : "",
+      githubLink : "https://github.com/ChoRockKim/React-Native-Toy-Blog-Project",
+      projectId : "",
+      lastUpdated : "Feb 2026",
+    },
+    {
+      title : "토이 블로그 웹",
+      category : "Web App",
+      description : "Next.js 로 만든 토이 블로그 사이트입니다.",
+      image : ["/NextBlog/image1.png", "/NextBlog/image2.png"],
+      techStack : ["MongoDB", "Next.js", "oAuth", "Vercel", "JWT"],
+      features : [
+         "oAuth 를 통해 Github 로그인 연동 기능을 구현했습니다.",
+         "JWT 방식을 통해 로그인 기능 구현, 관리자 기능 존재",
+         "회원가입 및 로그인 시 유효성 검사",
+         "MongoDB Atlas 를 통해 작성된 글, 댓글, 회원 DB 구성 ",
+         "CRUD 기능 구현"
+      ],
+      demoLink : "https://next-js-toy-blog-dujeqv4dd-kim-cho-rocks-projects.vercel.app/list",
+      githubLink : "https://github.com/ChoRockKim/Next.js-Toy-Blog",
+      projectId : "",
+      lastUpdated : "Jan 2026",
+    },
+    {
+      title : "토이 쇼핑몰 웹",
+      category : "Web App",
+      description : "React.js 로 만든 토이 쇼핑몰 사이트입니다. 백엔드는 구현되지 않았습니다.",
+      image : ["/reactMall/image1.png", "/reactMall/image2.png", "/reactMall/image3.png"],
+      techStack : ["React.js", "Bootstrap"],
+      features : [
+         "Localstorage 기능으로 장바구니 구현",
+         "React-Route-Dom 을 통해 라우팅 구현",
+         "Redux를 통해 전역변수 관리"
+      ],
+      demoLink : "https://chorockkim.github.io/",
+      githubLink : "https://github.com/ChoRockKim/Toy-Project-Shopping-Mall",
+      projectId : "",
+      lastUpdated : "Nov 2025",
+    }
+   ]
 
   const openModal = (project: Project) => {
       setSelectedProject(project);
