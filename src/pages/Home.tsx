@@ -18,7 +18,7 @@ const Home: React.FC = () => {
          icon : "psychology"
       },
       { title : "기술의 유기적인 연결 경험",
-         explain : ["프론트엔드(React)에서 만든 데이터를 백엔드(Spring Boot)로 전달하고 저장하는 일련의 과정을 직접 연결하며 풀스택 개발의 기초를 다지고 있습니다."],
+         explain : ["프론트엔드에서 만든 데이터를 백엔드로 전달하고 저장하는 일련의 과정을 직접 연결하며 풀스택 개발의 기초를 다지고 있습니다."],
          icon : "database"
       }
    ]
