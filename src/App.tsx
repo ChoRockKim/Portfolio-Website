@@ -1,6 +1,6 @@
 // React Router를 이용한 클라이언트 라우팅 라이브러리 임포트
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 // 레이아웃 및 페이지 컴포넌트 임포트
 import Layout from "./components/Layout";
 const Home = lazy(() => import("./pages/Home"));
