@@ -1,90 +1,109 @@
-import { Link } from 'react-router-dom';
-import WhatDoIDo from '../components/WhatDoIDo/WhatDoIDo';
-import type { WhatDoIDoTypeList } from '../types/Home/WhatDoIDo';
-import ScrollToNext from '../utils/ScrollToNext.js'
-import TypingText from '../components/Common/TypingText.js'
+import { Link } from "react-router-dom";
+import WhatDoIDo from "../components/WhatDoIDo/WhatDoIDo";
+import type { WhatDoIDoTypeList } from "../types/Home/WhatDoIDo";
+import ScrollToNext from "../utils/ScrollToNext.js";
+import TypingText from "../components/Common/TypingText.js";
 
 const Home: React.FC = () => {
-
-   const whatDoIDoObj 
-   : WhatDoIDoTypeList = [
-      {  title : "모던 프론트엔드 개발",
-         explain : ["React 생태계를 이용해 SPA 프론트엔드를 개발합니다. Javascript es6+ 문법과 Typescript 사용에 능통합니다.",
-                    "React native 를 통한 앱 개발 경험이 있습니다."],
-         icon : "code"
-      },
-      { title : "논리적 사고와 커뮤니케이션",
-         explain : ["기술적 난제를 논리적으로 분석하고 해결책을 제시합니다. 원활한 소통을 바탕으로 팀의 목표에 기여하는 개발을 추구합니다."],
-         icon : "psychology"
-      },
-      { title : "기술의 유기적인 연결 경험",
-         explain : ["프론트엔드에서 만든 데이터를 백엔드로 전달하고 저장하는 일련의 과정을 직접 연결하며 풀스택 개발의 기초를 다지고 있습니다."],
-         icon : "database"
-      }
-   ]
+  const whatDoIDoObj: WhatDoIDoTypeList = [
+    {
+      title: "모던 프론트엔드 개발",
+      explain: [
+        "React 생태계를 이용해 SPA 프론트엔드를 개발합니다. Javascript es6+ 문법과 Typescript 사용에 능통합니다.",
+        "React native 를 통한 앱 개발 경험이 있습니다.",
+      ],
+      icon: "code",
+    },
+    {
+      title: "논리적 사고와 커뮤니케이션",
+      explain: [
+        "기술적 난제를 논리적으로 분석하고 해결책을 제시합니다. 원활한 소통을 바탕으로 팀의 목표에 기여하는 개발을 추구합니다.",
+      ],
+      icon: "psychology",
+    },
+    {
+      title: "기술의 유기적인 연결 경험",
+      explain: [
+        "프론트엔드에서 만든 데이터를 백엔드로 전달하고 저장하는 일련의 과정을 직접 연결하며 풀스택 개발의 기초를 다지고 있습니다.",
+      ],
+      icon: "database",
+    },
+  ];
 
   return (
-   <>
-    <div className="w-full max-w-[1200px] px-6 lg:px-20 py-10 flex flex-col gap-12">
-       {/* Hero Section */}
-       <div className="@container">
+    <>
+      <div className="w-full max-w-[1200px] px-6 lg:px-20 py-10 flex flex-col gap-12">
+        {/* Hero Section */}
+        <div className="@container">
           <div className="flex flex-col-reverse gap-8 py-10 lg:flex-row lg:items-center">
-             
-             <div className="flex flex-col gap-6 lg:pl-10 justify-center">
-                <div className="flex flex-col gap-3 text-left">
-                   <span className="text-primary font-bold tracking-wider uppercase text-sm">Developer Portfolio</span>
-                   {/* <h1 className="text-white text-4xl font-black lg:leading-tight tracking-[-0.033em] lg:text-5xl">
+            <div className="flex flex-col gap-6 lg:pl-10 justify-center">
+              <div className="flex flex-col gap-3 text-left">
+                <span className="text-primary font-bold tracking-wider uppercase text-sm">
+                  Developer Portfolio
+                </span>
+                {/* <h1 className="text-white text-4xl font-black lg:leading-tight tracking-[-0.033em] lg:text-5xl">
                       안녕하세요,<br/>프론트엔드 개발자 <br/> <span className="text-green-400">김태헌</span>입니다
                    </h1> */}
-                   <TypingText text={"안녕하세요,\n프론트엔드 개발자 \n김태헌 입니다."} />
-                   <p className="text-white/80 text-lg font-normal leading-relaxed mt-2">
-                      화면 너머의 데이터 흐름까지 이해하는 프론트엔드 개발자입니다. <br/>React 생태계를 활용한 인터페이스 구현은 물론, 백엔드 메커니즘에 대한 깊은 이해를 바탕으로 최적화된 API 구조를 함께 고민하고 설계합니다.
-                   </p>
+                <div className="min-h-[180px]"> {/* CLS 방지를 위해 최소 높이 설정 */}
+                  <TypingText
+                    text={"안녕하세요,\n프론트엔드 개발자 \n김태헌 입니다."}
+                  />
                 </div>
-                <div className="flex flex-wrap gap-4 mt-2">
-                   <Link to="/projects" className="flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-lg shadow-primary/25">
-                      View Projects
-                   </Link>
-                   {/* <Link to="/blog" className="flex items-center justify-center rounded-full h-12 px-8 bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-white text-base font-bold backdrop-blur-sm">
+                <p className="text-white/80 text-lg font-normal leading-relaxed mt-2">
+                  화면 너머의 데이터 흐름까지 이해하는 프론트엔드 개발자입니다.{" "}
+                  <br />
+                  React 생태계를 활용한 인터페이스 구현은 물론, 백엔드
+                  메커니즘에 대한 깊은 이해를 바탕으로 최적화된 API 구조를 함께
+                  고민하고 설계합니다.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 mt-2">
+                <Link
+                  to="/projects"
+                  className="flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-lg shadow-primary/25"
+                >
+                  View Projects
+                </Link>
+                {/* <Link to="/blog" className="flex items-center justify-center rounded-full h-12 px-8 bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-white text-base font-bold backdrop-blur-sm">
                       Read Blog
                    </Link> */}
-                </div>
-             </div>
-             <div className="lg:w-6/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
-                <div className="absolute inset-0 bg-gradient-to-tr  to-transparent z-10 "></div>
-                <img
-                  alt="Abstract coding background"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="/profile/me.jpeg"
-                />
-                {/* https://lh3.googleusercontent.com/aida-public/AB6AXuDSvxU1FmDRxOnrhzf2i235OyaOr70gf27xnKy43VXM0s7iA9-I1NyGOytMZl_0ga4d7lleTiPvADiP4WM_QDl_PlAjtvA5WThb7aS__dOawUxcoTglSwsvrj2sBjv-26dw0t2RDx--zP2xGGuzU8rxfyAgz4D0I7UdyfnwHfY5bT-PLVmuEghzGBR7pwnU3xASKevaJZ_u2i8y1rxKAXKUj8b6tonS4ILbUOmRvfE3IoCt6vWVQXTXFYjhIJi1OFnWb73LwON6mpMM */}
-             </div>
+              </div>
+            </div>
+            <div className="lg:w-6/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
+              <div className="absolute inset-0 bg-gradient-to-tr  to-transparent z-10 "></div>
+              <img
+                alt="Abstract coding background"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="/profile/me.jpeg"
+                fetchPriority="high"
+                width="500"
+                height="500"
+              />
+              {/* https://lh3.googleusercontent.com/aida-public/AB6AXuDSvxU1FmDRxOnrhzf2i235OyaOr70gf27xnKy43VXM0s7iA9-I1NyGOytMZl_0ga4d7lleTiPvADiP4WM_QDl_PlAjtvA5WThb7aS__dOawUxcoTglSwsvrj2sBjv-26dw0t2RDx--zP2xGGuzU8rxfyAgz4D0I7UdyfnwHfY5bT-PLVmuEghzGBR7pwnU3xASKevaJZ_u2i8y1rxKAXKUj8b6tonS4ILbUOmRvfE3IoCt6vWVQXTXFYjhIJi1OFnWb73LwON6mpMM */}
+            </div>
           </div>
-       </div>
+        </div>
 
-       {/* What I Do Section */}
-       <div className="flex flex-col gap-10 py-10">
+        {/* What I Do Section */}
+        <div className="flex flex-col gap-10 py-10">
           <div className="flex flex-col gap-4 text-center lg:text-left">
-             <h2 className="text-white text-3xl font-bold leading-tight lg:text-4xl">
-                What I Do
-             </h2>
-             <p className="text-white/70 text-base font-normal leading-normal max-w-[720px]">
-                {/* Building innovative solutions based on linguistic engineering and software development capabilities. */}
-             </p>
+            <h2 className="text-white text-3xl font-bold leading-tight lg:text-4xl">
+              What I Do
+            </h2>
+            <p className="text-white/70 text-base font-normal leading-normal max-w-[720px]">
+              {/* Building innovative solutions based on linguistic engineering and software development capabilities. */}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-             
-             { whatDoIDoObj.map((datas, idx) => {
-                  return (
-                     <WhatDoIDo datas = {datas} key={idx}/>
-                  )
-             })}
+            {whatDoIDoObj.map((datas, idx) => {
+              return <WhatDoIDo datas={datas} key={idx} />;
+            })}
           </div>
-       </div>
+        </div>
 
-       {/* Featured Projects Section */}
-       {/* <div className="flex flex-col gap-8 py-10">
+        {/* Featured Projects Section */}
+        {/* <div className="flex flex-col gap-8 py-10">
           <div className="flex items-center justify-between">
              <h2 className="text-white text-2xl font-bold leading-tight">Featured Projects</h2>
              <Link to="/projects" className="text-primary text-sm font-bold hover:underline">View All Projects →</Link>
@@ -133,8 +152,8 @@ const Home: React.FC = () => {
              </div>
           </div>
        </div> */}
-      <ScrollToNext nextPath='tech-stack' nextProjectName='Skills' />
-    </div>
+        <ScrollToNext nextPath="tech-stack" nextProjectName="Skills" />
+      </div>
     </>
   );
 };

@@ -28,12 +28,13 @@ const TypingText = ({ text } : { text : string}) => {
         {displayedText}
         
         <motion.span
-          animate={{ opacity: [1, 0] }}
-          transition={{ 
-            duration: 0.6, 
-            repeat: Infinity, 
+          animate={{ visibility: ["visible", "hidden"] }}
+          transition={{
+            duration: 0.6,
+            repeat: Infinity,
+            ease: "linear"
           }}
-          className="inline-block w-[4px] h-[0.9em] bg-primary ml-1 translate-y-[10%]"
+          className="inline-block w-[4px] h-[0.9em] bg-primary ml-1"
         />
       </h1>
     </div>
