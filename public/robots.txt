@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 사이트맵 파일의 정확한 경로를 지정
+Sitemap: https://taeheonkim-portfolio.vercel.app/sitemap.xml
