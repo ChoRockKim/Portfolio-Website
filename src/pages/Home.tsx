@@ -44,7 +44,9 @@ const Home: React.FC = () => {
                 {/* <h1 className="text-white text-4xl font-black lg:leading-tight tracking-[-0.033em] lg:text-5xl">
                       안녕하세요,<br/>프론트엔드 개발자 <br/> <span className="text-green-400">김태헌</span>입니다
                    </h1> */}
-                <div className="min-h-[180px]"> {/* CLS 방지를 위해 최소 높이 설정 */}
+                <div className="min-h-[180px]">
+                  {" "}
+                  {/* CLS 방지를 위해 최소 높이 설정 */}
                   <TypingText
                     text={"안녕하세요,\n프론트엔드 개발자 \n김태헌 입니다."}
                   />
@@ -59,14 +61,17 @@ const Home: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-4 mt-2">
                 <Link
+                  to="/tech-stack"
+                  className="flex items-center justify-center rounded-full h-12 px-8 bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-white text-base font-bold backdrop-blur-sm"
+                >
+                  Skills
+                </Link>
+                <Link
                   to="/projects"
                   className="flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-lg shadow-primary/25"
                 >
                   View Projects
                 </Link>
-                {/* <Link to="/blog" className="flex items-center justify-center rounded-full h-12 px-8 bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-white text-base font-bold backdrop-blur-sm">
-                      Read Blog
-                   </Link> */}
               </div>
             </div>
             <div className="lg:w-6/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
