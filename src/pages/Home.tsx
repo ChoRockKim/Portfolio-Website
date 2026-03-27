@@ -72,6 +72,13 @@ const Home: React.FC = () => {
                 >
                   View Projects
                 </Link>
+                <a
+                  href="https://chorock.page"
+                  target="_blank"
+                  className="flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-lg shadow-primary/25"
+                >
+                  View Blog
+                </a>
               </div>
             </div>
             <div className="lg:w-6/12 w-0 translate-x-1  rounded-2xl overflow-hidden shadow-2xl bg-card-dark relative group">
