@@ -93,13 +93,14 @@ const Projects: React.FC = () => {
       lastUpdated: "Feb 2026",
     },
     {
-      title: "토이 블로그 웹",
+      title: "기술 블로그",
       category: "Web App",
       description:
-        "Express로 만든 토이 블로그 사이트입니다. 글 작성/수정/삭제, 댓글 작성/수정/삭제, 쪽지 기능, 프로필 설정 기능을 구현했습니다. 현재 지속적으로 고도화 중입니다.",
+        "Node.js Express로 만든 토이 블로그 사이트입니다. 글 작성/수정/삭제, 댓글 작성/수정/삭제, 쪽지 기능, 프로필 설정 기능을 구현했습니다. 현재 지속적으로 고도화 중입니다.",
       image: [
-        "/NodeBlog/desktop-list.webp",
-        "/NodeBlog/desktop-detail.webp",
+        "/NodeBlog/nodeblog-main.webp",
+        "/NodeBlog/nodeblog-detail.webp",
+        "/NodeBlog/nodeblog-write.webp",
         "/NodeBlog/desktop-login.webp",
         "/NodeBlog/desktop-register.webp",
         "/NodeBlog/desktop-chat.webp",
@@ -114,6 +115,7 @@ const Projects: React.FC = () => {
         "AWS EC2",
         "Socket.io",
         "AWS S3",
+        "Toast Ui Editor",
       ],
       features: [
         "세션 방식을 통해 로그인 기능 구현, 관리자 기능 존재",
